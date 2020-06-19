@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'ApiController@loadingAction');
+Route::get('/start', 'ApiController@indexAction');
+Route::get('/work', 'ApiController@workAction');
+Route::get('/map', 'ApiController@mapAction');
