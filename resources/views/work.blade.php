@@ -53,7 +53,7 @@
             </div>
             <div class="textik">
 
-                <a href="call.docx"><div class="contact">
+                <a href="dl_save.php?filename=call.docx"><div class="contact">
                         Каллорийность блюд
                     </div></a>
 
