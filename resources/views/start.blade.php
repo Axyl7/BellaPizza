@@ -6,6 +6,13 @@
     <title>Bella Pizza</title>
 </head>
 <body link="#000000" alink="#000000" vlink="#000000">
+
+
+
+
+
+
+
 <div class="footer">
     <div class="icon">
         <IMG SRC="bell/icon.png" ALIGN="center" width="100%">
@@ -85,8 +92,26 @@
 </div>
 <div class="copyright">
     &copy; Сукманов Никита
-</div>
+    @if (!Auth::check())
+    <button class="open-button" onclick="openForm()">Войти в систему</button>
+    <a class="form-popup" id="myForm">
+        <form method="get" action="/auth" class="form-container">
+            <h1>Логин</h1>
 
+            <label for="login"><b>Логин</b></label>
+            <input type="text" placeholder="Введите Логин" name="login">
+
+            <label for="password"><b>Пароль</b></label>
+            <input type="password" placeholder="Введите Пароль" name="password">
+
+            <button type="submit" class="btn">Логин</button>
+            <button type="button" class="btn cancel" onclick="closeForm()" >Закрыть</button>
+        </form>
+        @else
+            <a href="/logout"><div class="exitbutton">Выйти из системы</div></a>
+        @endif
+    </div>
+</div>
 
 
 
@@ -215,8 +240,6 @@
     </div>
     <a href="#" class="close">Закрыть окно</a>
     <hr size="4" color="#696969" width="97%">
-
-
 </div>
 
 
@@ -490,6 +513,8 @@
 </div>
 
 
+
+
 <script src="https://snipp.ru/cdn/jquery/2.1.1/jquery.min.js"></script>
 <script>
     $(function(){
@@ -498,6 +523,14 @@
             return false;
         });
     });
+
+    function openForm() {
+        document.getElementById("myForm").style.display = "block";
+    }
+
+    function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+    }
 </script>
 
 

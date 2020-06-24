@@ -19,5 +19,15 @@ class ApiController extends Controller
     Public function mapAction(){
         return view('map');
     }
+    Public function adminpanelAction(){
+        return view('adminpanel', ['basket' => (new BasketController())->show()]);
+    }
+    public function registration(Request $request){
+
+    }
+    public function reg(){
+        return view('reg');
+
+    }
 }
 
